@@ -1,0 +1,12 @@
+#!/bin/bash
+export S3_BUCKET_NAME=my-bucket-name
+export AWS_ACCESS_KEY_ID=my-access-key
+export AWS_SECRET_ACCESS_KEY=my-secret-access-key
+
+echo "Listing files in bucket ${S3_BUCKET_NAME}"
+aws s3 ls --recursive s3://${S3_BUCKET_NAME}/ | awk '{print $4}' | grep .tar > objects_in_bucket
+echo "extracting tars"
+while read p; do
+    echo $p
+  node index.js $p
+done < objects_in_bucket
