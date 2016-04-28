@@ -7,10 +7,10 @@ The app will do the following:
 * locate .TARs within bucket and all subsequent prefixes
 * write list of TAR object to `objects_in_bucket` file
 * refer to list of objects found. then for each object:
-** read TAR header
-** locate .zip file
-** copy only .zip file to `tmp` dir in repo
-** close TAR file
+* * read TAR header
+* * locate .zip file
+* * copy only .zip file to `tmp` dir in repo
+* * close TAR file
 
 
 First Run:
