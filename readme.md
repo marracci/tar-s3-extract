@@ -1,4 +1,18 @@
-First run:
+*This repo provides a node.js toolset for extracting specific filetypes out of a TAR on S3*
+*Created to specifically avoide having to extract all files within a TAR to access the filetype needed*
+
+The app will do the following:
+- access s3 bucket/prefix
+- locate .TARs within bucket and all subsequent prefixes
+- write list of TAR object to `objects_in_bucket` file
+- refer to list of objects found. then for each object:
+-- read TAR header
+-- locate .zip file
+-- copy only .zip file to `tmp` dir in repo
+-- close TAR file
+
+
+First Run:
 
 $ cd extractzip
 - make sure tmp dir is clear
