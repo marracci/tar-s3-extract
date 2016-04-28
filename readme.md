@@ -3,14 +3,14 @@
 *Created to specifically avoid having to extract all files within a TAR to access only the filetype needed*
 
 The app will do the following:
-- access s3 bucket/prefix
-- locate .TARs within bucket and all subsequent prefixes
-- write list of TAR object to `objects_in_bucket` file
-- refer to list of objects found. then for each object:
-* read TAR header
-* locate .zip file
-* copy only .zip file to `tmp` dir in repo
-* close TAR file
+* access s3 bucket/prefix
+* locate .TARs within bucket and all subsequent prefixes
+* write list of TAR object to `objects_in_bucket` file
+* refer to list of objects found. then for each object:
+** read TAR header
+** locate .zip file
+** copy only .zip file to `tmp` dir in repo
+** close TAR file
 
 
 First Run:
@@ -31,8 +31,8 @@ then run:
 
 $ ./extractzips
 
-++ if you change your bucket keys:
-  in `extractzips` make sure to change keys.
+++ if you change your bucket keys on AWS:
+* in `extractzips` make sure to update your access and secret keys.
 
   then run:
 
